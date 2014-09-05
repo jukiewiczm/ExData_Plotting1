@@ -50,7 +50,7 @@ getData <- function() {
         
         ## get the date and time from the first two columns, make new column
         ## then drop the old ones
-        DateTime <- as.POSIXlt( paste(inputData$Date, inputData$Time),
+        DateTime <- strptime( paste(inputData$Date, inputData$Time),
                                 format = "%d/%m/%Y %H:%M:%S")
         
         inputData <- cbind(DateTime, inputData)
